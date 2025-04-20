@@ -1,8 +1,12 @@
 import { Player } from "../../../App";
 // import './ScoreCard.css'
 
+interface ScoreCardProps {
+    player: Player;
+}
 
-function ScoreCard(player: Player) {
+
+function ScoreCard({ player } : ScoreCardProps) {
     return (
         <div>
             { player ? 

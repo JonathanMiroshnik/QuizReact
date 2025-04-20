@@ -1,0 +1,5 @@
+.current-player-highlight {
+    border-color: red;
+    border-radius: 10px;
+    border-style: solid;
+}

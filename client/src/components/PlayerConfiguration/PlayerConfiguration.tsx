@@ -1,8 +1,12 @@
+import { Player } from '../../App';
+
 import './PlayerConfiguration.css'
 
 interface PlayerConfigurationProps {
-    players: Array<string>;
+    players: Player[];
     addPlayer: () => void;
+    removePlayer: () => void;
+    onPlayerChange: (playerInd: number, playerToChangeTo: Player) => void;
 }
 
 function PlayerConfiguration(playerConfigurationProps: PlayerConfigurationProps) {
@@ -13,11 +17,15 @@ function PlayerConfiguration(playerConfigurationProps: PlayerConfigurationProps)
             { playerConfigurationProps.players.map((player, index) => (
                 <input 
                     key={index}
-                    value={player}
-                    // onChange={(e) => {/* Handle input changes */}}
+                    value={player.name}
+                    // Two way binding
+                    onChange={(e) => { playerConfigurationProps.onPlayerChange(index, {name: e.target.value , score: player.score}) }}
                 />
             ))}
             <button onClick={playerConfigurationProps.addPlayer}> + </button>
+            { playerConfigurationProps.players.length >= 3 &&
+                <button onClick={playerConfigurationProps.removePlayer}> - </button> 
+            }    
         </div>
     );
 }
