@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import ReactMarkdown from 'react-markdown';
 import { Question } from "../api/questionService";
 
 // import './Question.css'
@@ -59,7 +59,7 @@ function QuestionCard(questionProps: QuestionProps) {
 
     return (
         <div>
-            <h1>{questionProps.questionAPIStructure.question}</h1>
+            <ReactMarkdown>{questionProps.questionAPIStructure.question}</ReactMarkdown>
             {answers.length > 0 && answers.map((answer, i) => (
                 <button key={i} onClick={() => checkCorrect(answer)}>{answer}</button>
             ))}

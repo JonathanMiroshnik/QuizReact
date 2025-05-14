@@ -1,11 +1,4 @@
-// import { Player } from "../../App";
-// import ScoreCard from "./ScoreCard/ScoreCard";
-
-import { QuestionOrigins } from "../../App";
-
-// import './ScoreBoard.css'
-
-
+import { QuestionOrigins } from "../TriviaGame/TriviaGame";
 
 function QuestionOriginsDecider() {
     return (

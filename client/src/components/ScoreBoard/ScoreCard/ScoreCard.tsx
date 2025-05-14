@@ -1,4 +1,4 @@
-import { Player } from "../../../App";
+import { Player } from "../../TriviaGame/TriviaGame";
 // import './ScoreCard.css'
 
 interface ScoreCardProps {

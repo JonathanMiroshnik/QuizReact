@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { Player } from "../../App";
+import { Player } from '../TriviaGame/TriviaGame';
 
 import './WinnerOverlay.css'
 

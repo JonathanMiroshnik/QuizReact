@@ -1,5 +1,16 @@
-.current-player-highlight {
-    border-color: red;
+.player-highlights {
+    display: flex;
+    justify-content: center;
+
+    gap: 5rem;
+}
+
+.player-card-wrapper {    
+    padding: 2rem;
+}
+
+.current-player-highlight {    
+    border-color: red;    
     border-radius: 10px;
     border-style: solid;
 }

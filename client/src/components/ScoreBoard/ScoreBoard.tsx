@@ -1,4 +1,4 @@
-import { Player } from "../../App";
+import { Player } from "../TriviaGame/TriviaGame";
 import ScoreCard from "./ScoreCard/ScoreCard";
 
 import './ScoreBoard.css'
@@ -11,17 +11,12 @@ interface ScoreBoardProps {
 
 function ScoreBoard({players, currentPlayerInd = 0} : ScoreBoardProps) {
     return (
-        <div>
-            { players.map((p, i) => {
-                    if (i === currentPlayerInd) {
-                        return (
-                            <div className="current-player-highlight">
-                                <ScoreCard player={p} />
-                            </div>                            
-                        )
-                    }
-                    return <ScoreCard player={p} />
-                })}
+        <div className="player-highlights">
+            { players.map((p, i) => 
+                <div className={`player-card-wrapper ${ i === currentPlayerInd ? "current-player-highlight" : ""}`}>
+                    <ScoreCard player={p} />
+                </div>
+            )}
         </div>
     );
 }
